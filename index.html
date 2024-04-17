@@ -19,16 +19,18 @@
       </div>
       <div class="container">
         <div class="row py-4 justify-content-center">
-          <div
-          v-for="(song, i) in playList"
-          :key="i"
-          class="card mx-3 my-2 pt-3 px-3 bg-black text-light"
-          style="width: 20rem;">
-            <img :src="song.poster" class="card-img-top" :alt="song.title">
-            <div class="card-body text-center ">
-              <h5 class="fw-bold">{{ song.title }}</h5>
-              <h6>{{ song.author }}</h6>
-              <h6 class="fw-bold">{{ song.year }}</h6>
+          <div class="col col-10 d-flex justify-content-center flex-wrap">
+            <div
+            v-for="(song, i) in playList"
+            :key="i"
+            class="card mx-3 my-2 pt-3 px-3 bg-black text-light"
+            style="width: 16rem;">
+              <img :src="song.poster" class="card-img-top" :alt="song.title">
+              <div class="card-body text-center ">
+                <h5 class="fw-bold">{{ song.title }}</h5>
+                <h6>{{ song.author }}</h6>
+                <h6 class="fw-bold">{{ song.year }}</h6>
+              </div>
             </div>
           </div>
         </div>
