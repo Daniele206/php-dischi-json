@@ -18,5 +18,3 @@ Solo a questo punto sarà utile passare alla lettura della lista da un file JSON
 Al click su un disco, recuperare e mostrare i dati del disco selezionato.
 Vi allego uno screenshot per la grafica e un file json per i dati ma non sono vincolanti.
 La grafica è libera e potete mettere un elenco di dichi a scelta, l’importante che la struttura dei dati sia di questo tipo
-
-## Svolgimento:

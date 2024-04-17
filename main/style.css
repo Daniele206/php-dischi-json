@@ -1,0 +1,9 @@
+.my_container{
+  height: 100vh;
+  background-color: #1D2D3C;
+}
+
+.logo{
+  width: 60px;
+  cursor: pointer;
+}
