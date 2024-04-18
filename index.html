@@ -21,16 +21,40 @@
           <div class="offcanvas offcanvas-end bg_dark text-light w-25" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header">
               <h5 class="offcanvas-title text-success fw-bold fs-2" id="offcanvasRightLabel">Add Song</h5>
-              <button type="button" class="btn-close text-light" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa-solid fa-x"></i></button>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body d-flex flex-column">
-              <div v-for="(info, id) in newSong">
-                <span class="fs-4 fw-bold text-capitalize">{{ id }}</span>
+              <div>
+                <span class="fs-4 fw-bold text-capitalize">Titolo</span>
                 <div class="input-group mb-3">
-                  <input v-model="info" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  <input v-model="newSong.title" type="text" class="form-control" aria-label="Sizing example input">
                 </div>
               </div>
-              <button class="btn btn-outline-success w-25 fw-bold mt-3">Add</button>
+              <div>
+                <span class="fs-4 fw-bold text-capitalize">Autore</span>
+                <div class="input-group mb-3">
+                  <input v-model="newSong.author" type="text" class="form-control" aria-label="Sizing example input">
+                </div>
+              </div>
+              <div>
+                <span class="fs-4 fw-bold text-capitalize">Anno</span>
+                <div class="input-group mb-3">
+                  <input v-model="newSong.year" type="text" class="form-control" aria-label="Sizing example input">
+                </div>
+              </div>
+              <div>
+                <span class="fs-4 fw-bold text-capitalize">Poster</span>
+                <div class="input-group mb-3">
+                  <input v-model="newSong.poster" type="text" class="form-control" aria-label="Sizing example input">
+                </div>
+              </div>
+              <div>
+                <span class="fs-4 fw-bold text-capitalize">Genere</span>
+                <div class="input-group mb-3">
+                  <input v-model="newSong.genre" type="text" class="form-control" aria-label="Sizing example input">
+                </div>
+              </div>
+              <button @click.stop="addSong" class="btn btn-outline-success w-25 fw-bold mt-3">Add</button>
             </div>
           </div>
         </div>
@@ -38,6 +62,7 @@
       <div class="container">
         <div class="row py-4 justify-content-center">
           <div class="col col-10 d-flex justify-content-center flex-wrap">
+            <div v-if="playList.length === 0" class="text-light fw-bold fs-2">Non ci sono canzoni nella PlayList</div>
             <div
             v-for="(song, i) in playList"
             :key="i"
@@ -49,7 +74,7 @@
                 <h6>{{ song.author }}</h6>
                 <h6 class="fw-bold">{{ song.year }}</h6>
               </div>
-              <i class="fa-regular fs-4 fa-circle-xmark position-absolute x_position cursor_poinetr text-danger"></i>
+              <i @click="removeSong(i)" class="fa-regular fs-4 fa-circle-xmark position-absolute x_position cursor_poinetr text-danger"></i>
               <i @click="song.like = !song.like" v-if="!song.like" class="fa-regular fs-4 fa-heart position-absolute heart_position cursor_poinetr"></i>
               <i @click="song.like = !song.like" v-else-if="song.like" class="fa-solid fs-4 fa-heart position-absolute heart_position cursor_poinetr text-success"></i>
             </div>
