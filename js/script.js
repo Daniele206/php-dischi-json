@@ -41,7 +41,16 @@ createApp({
     },
 
     removeSong(i){
-      this.playList.splice(i, 1)
+      if(confirm('Vuoi davvero eliminare questa canzone')){
+        const data = new FormData();
+
+        data.append('removeSongId', i);
+  
+        axios.post(this.apiUrl, data)
+          .then(result => {
+            this.playList = result.data;
+          })
+      }
     }
   },
 

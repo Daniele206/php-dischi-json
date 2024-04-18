@@ -18,6 +18,13 @@ if(isset($_POST['newSongTitle'])){
   file_put_contents('dischi.json', json_encode($play_list));
 }
 
+if(isset($_POST['removeSongId'])){
+  $i = $_POST['removeSongId'];
+
+  array_splice($play_list, $i, 1);
+  file_put_contents('dischi.json', json_encode($play_list));
+}
+
 header('Content-Type: application/json');
 
 echo json_encode($play_list);
