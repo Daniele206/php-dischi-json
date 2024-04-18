@@ -25,3 +25,7 @@
   bottom: 10px;
   right: 10px;
 }
+
+img{
+  aspect-ratio: 1;
+}

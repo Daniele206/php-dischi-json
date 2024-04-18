@@ -10,7 +10,7 @@ createApp({
         title: "",
         author: "",
         year: "",
-        poster: "https://images-na.ssl-images-amazon.com/images/I/411BQR6BHRL.jpg",
+        poster: "",
         genre: ""
       }
     }
@@ -38,6 +38,12 @@ createApp({
         .then(result => {
           this.playList = result.data;
         })
+
+        this.newSong.title= "";
+        this.newSong.author= "";
+        this.newSong.year= "";
+        this.newSong.poster= "";
+        this.newSong.genre= "";
     },
 
     removeSong(i){
