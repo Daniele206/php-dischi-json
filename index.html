@@ -45,7 +45,7 @@
               <div>
                 <span class="fs-4 fw-bold text-capitalize">Poster</span>
                 <div class="input-group mb-3">
-                  <input v-model="newSong.poster" type="text" class="form-control" aria-label="Sizing example input">
+                  <input v-model="newSong.poster" type="text" class="form-control" aria-label="Sizing example input" placeholder="Link IMG (non obbligatorio)">
                 </div>
               </div>
               <div>
@@ -61,14 +61,15 @@
       </div>
       <div class="container">
         <div class="row py-4 justify-content-center">
-          <div class="col col-12 d-flex justify-content-center flex-wrap">
+          <div class="col col-10 d-flex justify-content-center flex-wrap">
             <div v-if="playList.length === 0" class="text-light fw-bold fs-2">Non ci sono canzoni nella PlayList</div>
             <div
             v-for="(song, i) in playList"
             :key="i"
             class="card position-relative mx-3 my-2 pt-3 px-3 bg-black text-light"
             style="width: 16rem;">
-              <img :src="song.poster" class="card-img-top" :alt="song.title">
+              <img v-if="!song.poster" src="https://static.vecteezy.com/ti/vettori-gratis/p3/4141669-nessuna-foto-o-immagine-vuota-icona-caricamento-immagini-o-mancante-immagine-segno-immagine-non-disponibile-o-immagine-in-arrivo-segno-semplice-natura-silhouette-in-frame-illustrazione-vettore-isolato-vettoriale.jpg" :alt="song.title">
+              <img v-else :src="song.poster" class="card-img-top" :alt="song.title">
               <div class="card-body text-center ">
                 <h5 class="fw-bold">{{ song.title }}</h5>
                 <h6>{{ song.author }}</h6>
