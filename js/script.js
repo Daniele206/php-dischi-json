@@ -51,6 +51,17 @@ createApp({
             this.playList = result.data;
           })
       }
+    },
+
+    like(i){
+      const data = new FormData();
+
+        data.append('likeId', i);
+  
+        axios.post(this.apiUrl, data)
+          .then(result => {
+            this.playList = result.data;
+          })
     }
   },
 

@@ -75,8 +75,8 @@
                 <h6 class="fw-bold">{{ song.year }}</h6>
               </div>
               <i @click="removeSong(i)" class="fa-regular fs-4 fa-circle-xmark position-absolute x_position cursor_poinetr text-danger"></i>
-              <i @click="song.like = !song.like" v-if="!song.like" class="fa-regular fs-4 fa-heart position-absolute heart_position cursor_poinetr"></i>
-              <i @click="song.like = !song.like" v-else-if="song.like" class="fa-solid fs-4 fa-heart position-absolute heart_position cursor_poinetr text-success"></i>
+              <i @click="like(i)" v-if="!song.like" class="fa-regular fs-4 fa-heart position-absolute heart_position cursor_poinetr"></i>
+              <i @click="like(i)" v-else-if="song.like" class="fa-solid fs-4 fa-heart position-absolute heart_position cursor_poinetr text-success"></i>
             </div>
           </div>
         </div>
