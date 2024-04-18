@@ -6,6 +6,13 @@ createApp({
     return{
       apiUrl: 'data/server.php',
       playList: [],
+      newSong: {
+        title: "",
+        author: "",
+        year: "",
+        poster: "",
+        genre: ""
+      }
     }
   },
 

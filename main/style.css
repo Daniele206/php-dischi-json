@@ -7,3 +7,7 @@
   width: 60px;
   cursor: pointer;
 }
+
+.bg_dark{
+  background-color: rgb(35, 35, 35) !important;
+}
