@@ -11,3 +11,17 @@
 .bg_dark{
   background-color: rgb(35, 35, 35) !important;
 }
+
+.cursor_poinetr{
+  cursor: pointer;
+}
+
+.x_position{
+  bottom: 10px;
+  left: 10px;
+}
+
+.heart_position{
+  bottom: 10px;
+  right: 10px;
+}

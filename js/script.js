@@ -11,7 +11,8 @@ createApp({
         author: "",
         year: "",
         poster: "",
-        genre: ""
+        genre: "",
+        like: false
       }
     }
   },
@@ -23,6 +24,10 @@ createApp({
         this.playList = result.data;
         console.log(this.playList);
       })
+    },
+
+    addSong(){
+
     }
   },
 
